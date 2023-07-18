@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Students table</title>
+  <link th:insert="~{sdn}">
+</head>
+<body>
+<div th:insert="~{navbar.html}"></div>
+<div class="container">
+  <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>NAME</th>
+      <th>SURNAME</th>
+      <th>EXAM</th>
+      <th>MARK</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr th:each="student : ${students}">
+        <td th:text="${student.id}"
+            th:class="${student.exam<50}?'text-danger':'text-dark'"></td>
+        <td th:text="${student.name}"
+            th:class="${student.exam<50}?'text-danger':'text-dark'"></td>
+        <td th:text="${student.surname}"
+            th:class="${student.exam<50}?'text-danger':'text-dark'"></td>
+        <td th:text="${student.exam}"
+            th:class="${student.exam<50}?'text-danger':'text-dark'"></td>
+        <td th:text="${student.mark}"
+            th:class="${student.exam<50}?'text-danger':'text-dark'"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add student</title>
+  <link th:insert="~{sdn}">
+</head>
+<body>
+<div th:insert="~{navbar.html}"></div>
+<div class="container col-4">
+  <br>
+  <form action="/addstudentobj" method="post">
+    <label class="form-label">NAME</label>
+    <input type="text" class="form-control" name="name">
+    <label class="form-label">SURNAME</label>
+    <input type="text" class="form-control" name="surname">
+    <label class="form-label">EXAM</label>
+    <input type="number" class="form-control" name="exam">
+    <br>
+    <br>
+    <button type="submit" class="btn btn-primary">ADD STUDENT</button>
+  </form>
+</div>
+
+</body>
+</html>
